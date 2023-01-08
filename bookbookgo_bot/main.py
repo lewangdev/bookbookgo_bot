@@ -51,7 +51,7 @@ async def title(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     user = update.message.from_user
     logger.info("User %s's input: %s", user.first_name, update.message.text)
     title = update.message.text
-    r = search_books(title)
+    r = search_books(dict(title=title))
     books = r['books']
     books_sorted = sort_books(books)
     context.user_data['books'] = books_sorted
