@@ -103,7 +103,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     user = update.message.from_user
     logger.info("User %s canceled the conversation.", user.first_name)
     await update.message.reply_text(
-        "Bye! Or /start another search", reply_markup=ReplyKeyboardRemove()
+        "Bye! Or /start another search"
     )
 
     return ConversationHandler.END
