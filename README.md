@@ -2,7 +2,7 @@
 
 A telegram bot for searching/downloading z-library books
 
-Visit :  [![telegram-bot](https://img.shields.io/badge/chat-@BookBookGo-blue?logo=telegram)](https://t.me/bookbookgo_bot)
+Visit :  [![telegram-bot](https://img.shields.io/badge/bot-@BookBookGo-blue?logo=telegram)](https://t.me/bookbookgo_bot)
 
 ## How to run
 
