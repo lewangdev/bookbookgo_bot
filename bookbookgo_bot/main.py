@@ -24,6 +24,7 @@ from telegram.ext import (
     ContextTypes,
     ConversationHandler,
     MessageHandler,
+    PicklePersistence,
     filters,
 )
 from config import BOT_TOKEN, IPFS_GATEWAY_BASE_URL, LOG_LEVEL
@@ -112,7 +113,8 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 def main() -> None:
     """Run the bot."""
     # Create the Application and pass it your bot's token.
-    application = Application.builder().token(BOT_TOKEN).build()
+    persistence = PicklePersistence(filepath="bookbookgo_bot.pickle")
+    application = Application.builder().token(BOT_TOKEN).persistence(persistence).build()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
@@ -121,6 +123,8 @@ def main() -> None:
             AUTHOR: [MessageHandler(filters.TEXT & ~filters.COMMAND, author)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
+        name="my_conversation",
+        persistent=True,
     )
 
     application.add_handler(conv_handler)
