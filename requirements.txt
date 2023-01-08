@@ -1,0 +1,3 @@
+python-dotenv
+python-telegram-bot
+requests
