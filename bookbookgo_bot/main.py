@@ -2,6 +2,7 @@
 # pylint: disable=unused-argument, wrong-import-position
 
 import logging
+import traceback
 
 from telegram import __version__ as TG_VER
 
@@ -112,6 +113,13 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
+async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+    tb_list = traceback.format_exception(None, context.error, context.error.__traceback__)
+    tb_string = "".join(tb_list)
+    update_str = update.to_dict() if isinstance(update, Update) else str(update)
+    logger.error(f"Exception while handling an update: {tb_string}, {update_str}")
+
+
 def main() -> None:
     """Run the bot."""
     # Create the Application and pass it your bot's token.
@@ -130,6 +138,9 @@ def main() -> None:
     )
 
     application.add_handler(conv_handler)
+
+    # Add the error handler
+    application.add_error_handler(error_handler)
 
     # Run the bot until the user presses Ctrl-C
     application.run_polling()
