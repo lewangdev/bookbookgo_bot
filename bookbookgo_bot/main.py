@@ -70,8 +70,8 @@ async def title(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         url_prefix = f"{IPFS_GATEWAY_BASE_URL}/ipfs/"
         url = f"{url_prefix}{ipfs_cid}?filename={title}.{extension}"
         text = f"Title: {title} Author: {author} Extension: {extension} URL: <a href=\"{url}\">Download</a>\n\n" \
-        "If the book above isn't your want, specify the author's name below\n" \
-        "Send /cancel to stop this session." 
+        "If the book above isn't your want, specify the author's name below\n\n" \
+        "Or send /cancel to stop this session then /start to search another title." 
 
         await update.message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
         return AUTHOR
@@ -82,7 +82,9 @@ async def author(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     title = context.user_data['title']
     books = list(filter(lambda n: True if author in n['author'] else False, books_saved))
     if len(books) == 0:
-        text = f'No book found with title: {title} and author: {author}.'
+        text = f'No book found with title: {title} and author: {author}.\n\n' \
+                "Continue to try another author's name.\n\n" \
+                "Or send /cancel to stop this session then /start to search another title." 
     else:
         book = books[0]
         title = book['title']
@@ -92,8 +94,8 @@ async def author(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         url_prefix = f"{IPFS_GATEWAY_BASE_URL}/ipfs/"
         url = f"{url_prefix}{ipfs_cid}?filename={title}.{extension}"
         text = f"Title: {title} Author: {author} Extension: {extension} URL: <a href=\"{url}\">Download</a>\n\n" \
-        "If the book above isn't your want, specify the author's name below\n" \
-        "Send /cancel to stop this session." 
+        "If the book above isn't your want, specify the author's name below\n\n" \
+        "Or send /cancel to stop this session then /start to search another title." 
 
     await update.message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
     return AUTHOR
