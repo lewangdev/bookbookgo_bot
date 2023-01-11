@@ -29,7 +29,7 @@ from telegram.ext import (
     filters,
 )
 from config import BOT_TOKEN, IPFS_GATEWAY_BASE_URL, LOG_LEVEL
-from zlib_searcher import search_books, sort_books
+from book_searcher import search_books, sort_books
 
 # Enable logging
 logging.basicConfig(
@@ -41,8 +41,8 @@ TITLE, AUTHOR = range(2)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     await update.message.reply_text(
-        "Please input the title of the book\n"
-        "Send /cancel to stop this session.\n\n"
+        "Please input the title of the book\n\n"
+        "Send /cancel to stop this session."
     )
 
     return TITLE
@@ -72,7 +72,7 @@ async def title(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         url = f"{url_prefix}{ipfs_cid}?filename={title}.{extension}"
         text = f"Title: {title} Author: {author} Extension: {extension} URL: <a href=\"{url}\">Download</a>\n\n" \
         "If the book above isn't your want, specify the author's name below\n\n" \
-        "Or send /cancel to stop this session then /start to search another title." 
+        "Send /cancel to stop this session then /start to search another title." 
 
         await update.message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
         return AUTHOR
@@ -96,7 +96,7 @@ async def author(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         url = f"{url_prefix}{ipfs_cid}?filename={title}.{extension}"
         text = f"Title: {title} Author: {author} Extension: {extension} URL: <a href=\"{url}\">Download</a>\n\n" \
         "If the book above isn't your want, specify the author's name below\n\n" \
-        "Or send /cancel to stop this session then /start to search another title." 
+        "Send /cancel to stop this session then /start to search another title." 
 
     await update.message.reply_text(text, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
     return AUTHOR

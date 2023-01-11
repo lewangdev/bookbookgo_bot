@@ -1,8 +1,10 @@
 # BookBookGo Bot
 
-A telegram bot for searching/downloading z-library books
+A telegram bot for searching/downloading books on IPFS
 
-Visit :  [![telegram-bot](https://img.shields.io/badge/bot-@BookBookGo-blue?logo=telegram)](https://t.me/bookbookgo_bot)
+## Try 👇️
+
+[![telegram-bot](https://img.shields.io/badge/bot-@BookBookGo-blue?logo=telegram)](https://t.me/bookbookgo_bot)
 
 ## How to run
 
@@ -29,7 +31,7 @@ pip install -r requirements.txt
 BOT_TOKEN =
 
 # https://github.com/book-searcher-org/book-searcher
-ZLIB_SEARCHER_BASE_URL = http://127.0.0.1:7070
+BOOK_SEARCHER_BASE_URL = http://127.0.0.1:7070
 
 # https://ipfs.github.io/public-gateway-checker/
 IPFS_GATEWAY_BASE_URL = https://ipfs.io
@@ -40,10 +42,6 @@ LOG_LEVEL = debug
 3. Now run `python bootbookgo_bot/main.py`, you may press <kbd>CTRL</kbd> + <kbd>c</kbd> to stop the bot.
 
 
-More info about [persistence](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Making-your-bot-persistent).
-
-For furthur assistance :  [![telegram-chat](https://img.shields.io/badge/chat-@lewang-blue?logo=telegram)](https://t.me/lewang)
-
-
-
+## For furthur assistance Or need help to develop a Telegram Bot
+[![telegram-chat](https://img.shields.io/badge/chat-@lewang-blue?logo=telegram)](https://t.me/lewang)
 

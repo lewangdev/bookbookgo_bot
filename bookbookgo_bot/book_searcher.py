@@ -1,9 +1,9 @@
 import requests
 
-from config import ZLIB_SEARCHER_BASE_URL
+from config import BOOK_SEARCHER_BASE_URL
 
 def search_books(keyword, limit=100):
-    url = f"{ZLIB_SEARCHER_BASE_URL}/search"
+    url = f"{BOOK_SEARCHER_BASE_URL}/search"
     query=None
     if type(keyword) is dict:
         query = " ".join(map(lambda f: f'{f[0]}:{f[1]}', filter(lambda f: False if not f[1] else True, keyword.items())))
