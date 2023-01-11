@@ -11,7 +11,7 @@ require a bot token.
 import json
 import logging
 
-from config import TOKEN
+from config import BOT_TOKEN as TOKEN 
 
 from telegram import __version__ as TG_VER
 

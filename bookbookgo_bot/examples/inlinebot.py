@@ -17,7 +17,7 @@ bot.
 import logging
 from html import escape
 from uuid import uuid4
-from config import TOKEN
+from config import BOT_TOKEN as TOKEN 
 
 
 from telegram import __version__ as TG_VER

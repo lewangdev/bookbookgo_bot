@@ -17,7 +17,7 @@ Deep Linking example. Send /start to get the link.
 Press Ctrl-C on the command line or send a signal to the process to stop the
 bot.
 """
-from config import TOKEN
+from config import BOT_TOKEN as TOKEN 
 
 
 import logging

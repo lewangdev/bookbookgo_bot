@@ -39,7 +39,7 @@ from telegram.ext import (
     filters,
 )
 
-from config import TOKEN
+from config import BOT_TOKEN as TOKEN 
 
 # Enable logging
 logging.basicConfig(
