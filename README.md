@@ -1,6 +1,6 @@
 # BookBookGo Bot
 
-A telegram bot for searching/downloading books on IPFS
+A telegram bot for [book-searcher](https://github.com/book-searcher-org/book-searcher). Create and search books index, create your private library on Telegram.
 
 ## Try 👇️
 
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 BOT_TOKEN =
 
 # https://github.com/book-searcher-org/book-searcher
-BOOK_SEARCHER_BASE_URL = http://127.0.0.1:7070
+BOOK_SEARCHER_BASE_URL = https://zlib.cydiar.com
 
 # https://ipfs.github.io/public-gateway-checker/
 IPFS_GATEWAY_BASE_URL = https://ipfs.io
