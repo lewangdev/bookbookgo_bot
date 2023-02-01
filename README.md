@@ -8,6 +8,26 @@ A telegram bot for [book-searcher](https://github.com/book-searcher-org/book-sea
 
 ## How to run
 
+### Docker
+
+```sh
+sudo docker compose up -d
+```
+
+OR
+
+```sh
+sudo docker run -d \
+-e BOT_TOKEN=<Your TG BOT TOKEN> \
+-e BOOK_SEARCHER_BASE_URL=https://zlib.cydiar.com \
+--name bookbookgo_bot \
+--restart unless-stopped \
+lewangdev/bookbookgo_bot
+
+```
+
+### From Source Code
+
 0. Get the source code
 
 ```sh

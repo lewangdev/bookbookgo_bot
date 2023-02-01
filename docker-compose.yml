@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  bookbookgo_bot:
+    image: lewangdev/bookbookgo_bot:latest
+    restart: always
+    environment:
+      BOT_TOKEN: <Your TG Bot Token>
+      BOOK_SEARCHER_BASE_URL: https://zlib.cydiar.com
+      IPFS_GATEWAY_BASE_URL: https://cf-ipfs.com
