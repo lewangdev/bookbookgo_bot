@@ -39,7 +39,7 @@ IPFS_GATEWAY_BASE_URL = https://ipfs.io
 LOG_LEVEL = debug
 ```
 
-3. Now run `python bootbookgo_bot/main.py`, you may press <kbd>CTRL</kbd> + <kbd>c</kbd> to stop the bot.
+3. Now run `python bookbookgo_bot/main.py`, you may press <kbd>CTRL</kbd> + <kbd>c</kbd> to stop the bot.
 
 
 ## For furthur assistance Or need help to develop a Telegram Bot
