@@ -1,3 +1,4 @@
-python-dotenv
-python-telegram-bot
-requests
+python-dotenv==0.21.0
+requests==2.28.1
+python-telegram-bot[rate-limiter]==20.1
+openai>=0.27.0
